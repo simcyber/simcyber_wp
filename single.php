@@ -1,20 +1,59 @@
 <?php get_header(); ?>
 
 <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
-<article class="am-article" style="margin-top:20px;">
-  <div class="am-article-hd">
-    <h1 class="am-article-title" style="font-weight:bold; color:#000; font-size:4rem;"><?php the_title(); ?></h1>
+<header class="am-g my-head" style="margin-top: 40px; text-align: center;">
+  <div class="am-u-sm-12 am-article">
+    <h1 class="am-article-title"><?php the_title(); ?></h1>
     <p class="am-article-meta"><?php the_author(); ?></p>
   </div>
+</header>
+<hr class="am-article-divider"/>
 
-  <div class="am-article-bd">
-    <p class="am-article-lead"><?php the_content(); ?></p>
+
+<div class="am-g am-g-fixed">
+	
+  <div class="am-u-md-10 am-u-md-push-1">
+    <div class="am-g">
+      <div class="am-u-sm-11 am-u-sm-centered">
+        <div class="am-cf am-article">
+          <?php the_content(); ?>
+        </div>
+        <hr/>
+        <div class="am-cf">
+          <div class="am-fl"><?php echo previous_post_link('&lt;%link','%title',true,''); ?></div>
+          <div class="am-fr"><?php echo next_post_link('%link&gt;','%title',true,''); ?></div>
+        </div>
+        <hr />
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="<?php the_ID(); ?>" data-title="<?php the_title(); ?>" data-url="<?php the_guid(); ?>"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"nextbig"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+
+      </div>
+    </div>
   </div>
-</article>
+
+</div>
+
 <?php endwhile; ?>
 <?php else : ?>
 <?php endif; ?>
 
-	
+
+
+
 
 <?php get_footer(); ?>

@@ -81,9 +81,13 @@
     .get-btn {
       background: #fff;
     }
+	img {
+		width:100%;
+	}
 
   </style>
   	  <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+      <?php if ( is_home() && !is_paged() ){ ?>
       <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/stickUp.min.js"></script>
       <script type="text/javascript">
               //initiating jQuery
@@ -98,12 +102,12 @@
               });
 
       </script>
-
+	<?php } ?>
 </head>
 <body  style="background-color: #f1f2f6;">
 
 
-
+<?php if ( is_home() && !is_paged() ){ ?>
 <div class="get">
   <div class="am-g">
     <div class="am-u-lg-12">
@@ -116,34 +120,6 @@
     </div>
   </div>
 </div>
-
-<!--<header class="am-topbar navbar-skick">
-  <h1 class="am-topbar-brand">
-    <a href="<?php bloginfo('url'); ?>" style="font-size:35px; line-height:51px;">首页</a>
-  </h1>
-
-  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
-
-  <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
-
-    <form class="am-topbar-form am-topbar-left am-form-inline" id="search" action="<?php bloginfo('url'); ?>"  method="get" role="search">
-      <div class="am-form-group">
-        <input type="text" class="am-form-field am-input-sm" placeholder="关键词" name="s">
-      </div>
-      <button type="submit" class="am-btn am-btn-primary am-topbar-btn am-btn-md">搜索</button>
-    </form>
-
- 
-
-    <div class="am-topbar-right">
-    
-    <div class="bsync-custom icon-blue am-btn am-btn-primary am-topbar-btn am-btn-sm"><a title="一键分享到各大微博和社交网络" class="bshare-bsync " onclick="javascript:bSync.share(event)" style="color:#FFF;">分享</a><span class="BSHARE_COUNT bshare-share-count">0</span></div>
-<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bsync.js#uuid=#uuid=&amp;style=1"></script>
-     
-    </div>
-  </div>
-</header>-->
-
 <div class="navbar-skick" style="width:100%; z-index:999;">
 
 <ul class=" am-nav am-nav-pills am-nav-justify" style=" background-color:#FFF;">
@@ -153,6 +129,8 @@
   <li><a href="#">加入我们</a></li>
 </ul>
 </div>
+
+<?php } ?>
 
 <div class="am-container">
 
