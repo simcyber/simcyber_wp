@@ -1,5 +1,10 @@
 <?php get_header(); ?>
 
+<div style="top:10px; left:10px; position:fixed;" >
+<a href="<?php bloginfo('url'); ?>"><span class="am-icon-home am-icon-md"></span></a> 
+</div>
+
+
 <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
 <header class="am-g my-head" style="margin-top: 40px; text-align: center;">
   <div class="am-u-sm-12 am-article">

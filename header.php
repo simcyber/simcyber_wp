@@ -69,7 +69,11 @@
       background: #1E5B94;
       color: #fff;
       text-align: center;
+	  <?php if(is_category()) { ?>
+	  padding: 0.5rem 0;
+	  <?php }else{ ?>
       padding: 5rem 0;
+	  <?php } ?>
     }
 
     .get-title {
@@ -112,16 +116,19 @@
 <body  style="background-color: #f1f2f6;">
 
 
-<?php if ( is_home() && !is_paged() ){ ?>
+<?php if ( (is_home() || is_category() ) && !is_paged()  ){ ?>
 <div class="get">
   <div class="am-g">
     <div class="am-u-lg-12">
+      <?php if(is_category()) { ?>
+      <h1 class="get-title"><?php $category = get_the_category(); echo $category[0]->cat_name; ?></h1>
+      
+      <?php }else{ ?>
       <h1 class="get-title"><?php bloginfo('name'); ?></h1>
-
       <p>
        <?php bloginfo('description');  ?>
       </p>
-
+	  <?php } ?>
     </div>
   </div>
 </div>
