@@ -64,11 +64,60 @@
 	text-overflow: ellipsis;
 }
 </style>
+<style>
+    .get {
+      background: #1E5B94;
+      color: #fff;
+      text-align: center;
+      padding: 5rem 0;
+    }
 
-      <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/clamp.min.js"></script>
+    .get-title {
+      font-size: 9rem;
+      padding: 0.5rem;
+      display: inline-block;
+    }
+
+    .get-btn {
+      background: #fff;
+    }
+
+  </style>
+  	  <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+      <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/stickUp.min.js"></script>
+      <script type="text/javascript">
+              //initiating jQuery
+              jQuery(function($) {
+                $(document).ready( function() {
+                  //enabling stickUp on the '.navbar-wrapper' class
+                  $('.navbar-skick').stickUp({
+                      //enabling marginTop with the 'auto' setting 
+                      marginTop: 'auto'
+                    })
+                });
+              });
+
+      </script>
+
 </head>
-<body class="am-with-topbar-fixed-top" style="background-color: #f1f2f6;">
-<header class="am-topbar am-topbar-fixed-top">
+<body  style="background-color: #f1f2f6;">
+
+
+
+<div class="get">
+  <div class="am-g">
+    <div class="am-u-lg-12">
+      <h1 class="get-title"><?php bloginfo('name'); ?></h1>
+
+      <p>
+       发现有趣的新产品
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<!--<header class="am-topbar navbar-skick">
   <h1 class="am-topbar-brand">
     <a href="<?php bloginfo('url'); ?>" style="font-size:35px; line-height:51px;">首页</a>
   </h1>
@@ -93,9 +142,24 @@
      
     </div>
   </div>
-</header>
+</header>-->
 
+<div class="navbar-skick" style="width:100%; z-index:999;">
+
+<ul class=" am-nav am-nav-pills am-nav-justify" style=" background-color:#FFF;">
+  <li class="am-active"><a href="#">首页</a></li>
+  <li><a href="#">开始使用</a></li>
+  <li><a href="#">按需定制</a></li>
+  <li><a href="#">加入我们</a></li>
+</ul>
+</div>
 
 <div class="am-container">
+
+
+
+
+
+
 <!--container --> 
 

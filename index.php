@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="am-g am-g-fixed">
+<div class="am-g am-g-fixed" style="margin-top:10px;">
   <?php if(have_posts()) : ?>
   <?php while(have_posts()) : the_post(); ?>
   <div class="am-u-md-4">
