@@ -39,6 +39,7 @@ function echo_posts() {
 	$search="|<li>(.*?)</li>|";
 	preg_match_all($search,$post->post_content,$r);
 	//print_r($r);
+	if($r){
 	$n=0;
 	$all_n=count($r[0]);
 	if($all_n > 3){
@@ -52,6 +53,11 @@ function echo_posts() {
 	$tmp=implode("",$out);
 	return '<ul class="am-list am-list-static">'.$tmp."</ul>";
 	//return mb_substr(strip_tags($post->post_content), 0, 200, 'utf-8')."";
+	}else{
+		return $post->post_content;
+		
+	}
+
 }
 
 function echo_buy_url() { 
