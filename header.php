@@ -84,6 +84,11 @@
 	img {
 		width:100%;
 	}
+	.out_div{
+		width:100%; z-index:999;}
+	.fff{
+	background-color:#FFF;
+	}
 
   </style>
   	  <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
@@ -114,21 +119,25 @@
       <h1 class="get-title"><?php bloginfo('name'); ?></h1>
 
       <p>
-       发现有趣的新产品
+       <?php bloginfo('description');  ?>
       </p>
 
     </div>
   </div>
 </div>
-<div class="navbar-skick" style="width:100%; z-index:999;">
 
-<ul class=" am-nav am-nav-pills am-nav-justify" style=" background-color:#FFF;">
-  <li class="am-active"><a href="#">首页</a></li>
-  <li><a href="#">开始使用</a></li>
-  <li><a href="#">按需定制</a></li>
-  <li><a href="#">加入我们</a></li>
-</ul>
-</div>
+<?php
+wp_nav_menu( 
+	array( 
+		'container' => 'div',
+		'container_class' => 'navbar-skick out_div',
+		'menu' => 'now_menu',
+		'theme_location' => 'primary', 
+		'menu_class' => 'am-nav am-nav-pills am-nav-justify fff', 
+		//'walker' => new description_walker() //注意前面要有 new
+		) 
+	); 
+?>
 
 <?php } ?>
 

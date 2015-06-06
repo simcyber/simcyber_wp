@@ -1,4 +1,6 @@
 <?php
+register_nav_menus();
+
 if ( function_exists('register_sidebar') )
     register_sidebar();
 	
