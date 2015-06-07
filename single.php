@@ -21,6 +21,16 @@
     <div class="am-g">
       <div class="am-u-sm-11 am-u-sm-centered">
         <div class="am-cf am-article">
+        
+        <p>
+        <?php $img_url=get_post_meta($post -> ID, "img_url", true); 
+        if($img_url){
+        ?>
+        <img src="<?php echo $img_url;?>" style="width:100%" />
+        <?php } ?>
+        </p>
+
+
           <?php the_content(); ?>
         </div>
         <hr/>

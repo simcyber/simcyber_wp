@@ -6,6 +6,14 @@ if ( function_exists('register_sidebar') )
 	
 function catch_that_image() { 
 	global $post, $posts; 	
+	
+	$img_url=get_post_meta($post -> ID, "img_url", true); 
+	if($img_url){
+		$first_img = '<a href="'.$post->guid.'" title="'.$post->post_title.'"><img src="'.$img_url.'"  width="100%" class="img-rounded" /></a>';
+	
+	}else{
+		
+	
 	$first_img = ''; 	
 	ob_start(); 	
 	ob_end_clean(); 	
@@ -16,6 +24,8 @@ function catch_that_image() {
 	} 
 	else{
 	$first_img = '<a href="'.$post->guid.'" title="'.$post->post_title.'"><img src="'.$first_img.'"  width="100%" class="img-rounded" /></a>';
+	}
+	
 	}
 	return $first_img;
 }

@@ -80,7 +80,7 @@
     .get-btn {
       background: #fff;
     }
-	
+	img{max-width:100%}
 	.out_div{
 		width:100%; z-index:999;}
 	.fff{
