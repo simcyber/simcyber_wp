@@ -7,7 +7,7 @@
 	<div class="am-thumbnail">
       <?php echo catch_that_image(); ?>
       <div class="am-thumbnail-caption">
-        <h2 class="divout" style="line-height:1.3rem; margin-top:-1rem;"> <?php the_title(); ?></h2>
+        <h2 class="divout"> <?php the_title(); ?></h2>
         <div><?php echo echo_posts(); ?></div>
       </div>
     </div>
