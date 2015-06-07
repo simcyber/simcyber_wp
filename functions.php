@@ -52,7 +52,7 @@ function echo_posts() {
 	if($ex){
 		$atmp=str_replace("<li>","<li class='am-icon-book am-icon-fw divout' style='width:100%; text-align:left;'>",$ex);
 		$atmp=str_replace("<ul>",'<ul class="am-list am-list-static">',$atmp);
-		return $atmp;
+		
 	}else{
 	
 	$search="|<li>(.*?)</li>|";
@@ -69,8 +69,10 @@ function echo_posts() {
 		$out[$i]=$atmp;
 	}
 	$tmp=implode("",$out);
-	return '<ul class="am-list am-list-static">'.$tmp."</ul>";
+	$atmp = '<ul class="am-list am-list-static">'.$tmp."</ul>";
 	}
+	$atmp=trim($atmp);
+	return $atmp;
 
 }
 
