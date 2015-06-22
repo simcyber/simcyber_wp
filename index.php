@@ -5,9 +5,11 @@
   <?php while(have_posts()) : the_post(); ?>
   <div class="am-u-md-4">
 	<div class="am-thumbnail">
-      <?php echo catch_that_image(); ?>
+      <?php echo catch_that_image(); 
+	  $from=get_post_meta($post -> ID, "from", true);
+	  ?>
       <div class="am-thumbnail-caption">
-        <h2 class="divout" style="margin:0px;padding:0px; "> <?php the_title(); ?></h2>
+        <h2 class="divout" style="margin:0px;padding:0px; "><a href="<?php echo $from;?>"> <?php the_title(); ?></a></h2>
         <div><?php echo echo_posts(); ?></div>
       </div>
     </div>
