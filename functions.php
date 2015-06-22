@@ -28,6 +28,7 @@ function catch_that_image() {
 	$first_img = NULL;//bloginfo('template_url'). '/images/default-thumb.jpg';  	
 	} 
 	else{
+		$img_url=$first_img;
 	
 		$first_img = '<a href="'.$from.'" title="'.$post->post_title.'"><img src="'.$first_img.'"  width="100%" class="img-rounded" /></a>';
 		
@@ -37,6 +38,7 @@ function catch_that_image() {
 	}
 	$out['img']=$first_img;
 	$out['url']=$from;
+	$out['img_url']=$img_url;
 
 	
 	return $out;
