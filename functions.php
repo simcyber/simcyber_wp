@@ -35,10 +35,11 @@ function catch_that_image() {
 	}
 	
 	}
-	
+	$out['img']=$first_img;
+	$out['url']=$from;
 
 	
-	return $first_img;
+	return $out;
 }
 
 function catch_that_image_url_list() { 

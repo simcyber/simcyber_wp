@@ -5,8 +5,9 @@
   <?php while(have_posts()) : the_post(); ?>
   <div class="am-u-md-4">
 	<div class="am-thumbnail">
-      <?php echo catch_that_image(); 
-	  $from=get_post_meta($post -> ID, "from", true);
+      <?php $tmp_img=catch_that_image(); 
+	  echo $tmp_img['img'];
+	  $from=$tmp_img['url'];;
 	  ?>
       <div class="am-thumbnail-caption">
         <h2 class="divout" style="margin:0px;padding:0px; "><a href="<?php echo $from;?>"> <?php the_title(); ?></a></h2>
