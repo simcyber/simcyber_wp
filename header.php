@@ -1,156 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-cn">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>
-<?php if ( is_home() && !is_paged() ){ bloginfo('name'); ?>
-|
-<?php bloginfo('description'); } ?>
-<?php if (is_single() || is_page()) { ?>
-<?php wp_title('',true); ?>
-|
-<?php bloginfo('name'); } ?>
-<?php if ( is_paged() ){ ?>
-<?php printf( __('第%1$s页', ''), intval( get_query_var('paged')), $wp_query->max_num_pages); ?>|
-<?php bloginfo('name'); } ?>
-<?php if(is_category()) { $category = get_the_category(); echo '分类'.$category[0]->cat_name.'下的文章';  ?>
-|
-<?php bloginfo('name');  } ?>
-<?php if(is_search()) { echo '包含关键字 '.$s.' 的文章';  ?>
-|
-<?php bloginfo('name'); } ?>
-<?php if(is_tag()) { echo '标签'.single_tag_title("", true).'下的文章';  ?>
-|
-<?php bloginfo('name'); } ?>
-<?php if(is_author()) { echo wp_title().'发布的文章';  ?>
-|
-<?php bloginfo('name'); } ?>
-</title>
-<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.3.0/css/amazeui.min.css">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+	<?php if ( is_home() && !is_paged() ){ bloginfo('name'); ?>
+    |
+    <?php bloginfo('description'); } ?>
+    <?php if (is_single() || is_page()) { ?>
+    <?php wp_title('',true); ?>
+    |
+    <?php bloginfo('name'); } ?>
+    <?php if ( is_paged() ){ ?>
+    <?php printf( __('第%1$s页', ''), intval( get_query_var('paged')), $wp_query->max_num_pages); ?>|
+    <?php bloginfo('name'); } ?>
+    <?php if(is_category()) { $category = get_the_category(); echo '分类'.$category[0]->cat_name.'下的文章';  ?>
+    |
+    <?php bloginfo('name');  } ?>
+    <?php if(is_search()) { echo '包含关键字 '.$s.' 的文章';  ?>
+    |
+    <?php bloginfo('name'); } ?>
+    <?php if(is_tag()) { echo '标签'.single_tag_title("", true).'下的文章';  ?>
+    |
+    <?php bloginfo('name'); } ?>
+    <?php if(is_author()) { echo wp_title().'发布的文章';  ?>
+    |
+    <?php bloginfo('name'); } ?>
+    </title>
+	<!-- zui -->
+	<link href="<?php echo get_stylesheet_directory_uri(); ?>/css/zui.min.css" rel="stylesheet">
+	<!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery.min.js"></script>
+	<!-- ZUI Javascript组件 -->
+	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/zui.min.js"></script>
+	<!--[if lt IE 9]>
+	  <script src="<?php echo get_stylesheet_directory_uri(); ?>/lib/ieonly/html5shiv.js"></script>
+	  <script src="<?php echo get_stylesheet_directory_uri(); ?>/lib/ieonly/respond.js"></script>
+	  <script src="<?php echo get_stylesheet_directory_uri(); ?>/lib/ieonly/excanvas.js"></script>
+	<![endif]-->
 
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-<!--[if lt IE 9]>
-      <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/html5shiv.js"></script>
-      <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/respond.min.js"></script>
-    <![endif]-->
-
-<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
-<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
-<link rel="alternate" type="text/xml" title="RSS .92" href="<?php bloginfo('rss_url'); ?>" />
-<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<?php wp_get_archives('type=monthly&format=link'); ?>
-<?php //comments_popup_script(); // off by default ?>
-<style type="text/css">
-.divout {
-	white-space: nowrap;
-	word-wrap:break-word;
-	overflow: hidden;
-	-ms-text-overflow: ellipsis;
-	-o-text-overflow: ellipsis;
-	-webkit-text-overflow: ellipsis;
-	text-overflow: ellipsis;
-}
-.listout {
-	list-style:circle;
-	white-space: nowrap;
-	word-wrap:break-word;
-	overflow: hidden;
-	-ms-text-overflow: ellipsis;
-	-o-text-overflow: ellipsis;
-	-webkit-text-overflow: ellipsis;
-	text-overflow: ellipsis;
-}
-</style>
-<style>
-    .get {
-      background: #1E5B94;
-      color: #fff;
-      text-align: center;
-	  padding: 5rem 0;
-    }
-
-    .get-title {
-      padding: 0.5rem;
-      display: inline-block;
-    }
-
-    .get-btn {
-      background: #fff;
-    }
-	img{max-width:100%}
-	.out_div{
-		width:100%; z-index:999;}
-	.fff{
-	background-color:#FFF;
-	}
-
-  </style>
-  	  <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
-      <?php if ( is_home() && !is_paged() ){ ?>
-      <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/stickUp.min.js"></script>
-      <script type="text/javascript">
-              //initiating jQuery
-              jQuery(function($) {
-                $(document).ready( function() {
-                  //enabling stickUp on the '.navbar-wrapper' class
-                  $('.navbar-skick').stickUp({
-                      //enabling marginTop with the 'auto' setting 
-                      marginTop: 'auto'
-                    })
-                });
-              });
-
-      </script>
-	<?php } ?>
+    <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
+    <link rel="alternate" type="text/xml" title="RSS .92" href="<?php bloginfo('rss_url'); ?>" />
+    <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />
+    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+    <?php wp_get_archives('type=monthly&format=link'); ?>
 </head>
-<body  style="background-color: #f1f2f6;">
+<body>
+    <!--[if lt IE 8]>
+        <div class="alert alert-danger">您正在使用 <strong>过时的</strong> 浏览器. 是时候 <a href="http://browsehappy.com/">更换一个更好的浏览器</a> 来提升用户体验.</div>
+    <![endif]-->
+      <style type="text/css">
+		.navbar{
+			background-color:#057d9f;
+		}
+		.navbar a{
+			color:#FFF;
+		}
+		.navbar li a{
+			color:#FFF;
+		}
+		.dropdown-menu li a{
+			color:#000;
+		}
+	  </style>
+	  <nav class="navbar" role="navigation" >
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
+        </div>
 
-
-<?php if ( (is_home()  ) && !is_paged()  ){ ?>
-<div class="get">
-  <div class="am-g">
-    <div class="am-u-lg-12">
-      <h1 class="get-title"><img src="<?php echo get_stylesheet_directory_uri(); ?>/logo.png"></h1>
-      <p>
-       <?php bloginfo('description');  ?>
-      </p>
-    </div>
-  </div>
-</div>
-
-<?php
-wp_nav_menu( 
-	array( 
-		'container' => 'div',
-		'container_class' => 'navbar-skick out_div',
-		'menu' => 'now_menu',
-		'theme_location' => 'primary', 
-		'menu_class' => 'am-nav am-nav-pills am-nav-justify fff', 
-		//'walker' => new description_walker() //注意前面要有 new
-		) 
-	); 
-?>
-
-<?php } ?>
-
-<?php if(is_category() ){ ?>
-
-<h1 align="center" style="padding:10px; color:#03C;">#<?php $category = get_the_category(); echo $category[0]->cat_name; ?>#</h1>
-<?php } ?>
-
-<div style="top:10px; left:10px; position:fixed;" >
-<a href="<?php bloginfo('url'); ?>"><span class="am-icon-home am-icon-md"></span></a> 
-</div>
-
-<div class="am-container">
-
-
-
-
-
-
-<!--container --> 
-
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-collapse-example">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="<?php bloginfo('url'); ?>">首页</a></li>
+            <li><a href="{:U('Zhuanlan/index')}">专栏</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">发起新提案 <b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="{:U('Shenbao/only_one')}">单个提案(职员)</a></li>
+                <li><a href="#">批量上传</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" id="menu_search_keyword" class="form-control" placeholder="请输入关键词">
+            </div>
+            <button  class="btn btn-default" id="menu_search">搜索</button>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+			 <li><a href="{:U('Home/index')}"><i class="icon icon-user"></i>{$Think.session.Name}</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">设置/管理 <b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="{:U('Shenpi/wcx_list')}">待审批列表</a></li>
+                <li><a href="{:U('Admin/index')}">后台设置</a></li>
+                <li class="divider"></li>
+                <li><a href="{:U('Index/login_out')}">退出</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+    <div class="container">

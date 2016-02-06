@@ -63,27 +63,12 @@ function echo_posts() {
 	ob_end_clean(); 
 	$search="|<li>(.*?)</li>|";
 	$ex=$post->post_excerpt;
+	$content=$post->post_content;
 	if($ex){
-		preg_match_all($search,$ex,$r);
+		return $ex;
 	}else{
-		preg_match_all($search,$post->post_content,$r);
+		return mb_substr(strip_tags($content),0,180)."...";
 	}
-	//print_r($r);
-	$n=0;
-	$all_n=count($r[0]);
-	if($all_n > 3){
-		$all_n=3;
-	}
-	for($i=$n;$i<$all_n;$i++){
-		$atmp=$r[0][$i];
-		$atmp=str_replace("<li>","<li class='am-icon-book am-icon-fw divout' style='width:100%; text-align:left;'>",$atmp);
-		$out[$i]=$atmp;
-	}
-	$tmp=implode("",$out);
-	$atmp = '<ul class="am-list am-list-static">'.$tmp."</ul>";
-
-	$atmp=trim($atmp);
-	return $atmp;
 
 }
 
