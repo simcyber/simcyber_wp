@@ -91,7 +91,7 @@
         <div class="collapse navbar-collapse navbar-collapse-example">
           <ul class="nav navbar-nav">
             <li class="active"><a href="<?php bloginfo('url'); ?>">首页</a></li>
-            <li><a href="{:U('Zhuanlan/index')}">周刊</a></li>
+            <li><a href="<?php bloginfo('url'); ?>/category/周刊">周刊</a></li>
           </ul>
           <div class="navbar-form navbar-right" role="search">
           	<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
