@@ -81,33 +81,14 @@
         <div class="collapse navbar-collapse navbar-collapse-example">
           <ul class="nav navbar-nav">
             <li class="active"><a href="<?php bloginfo('url'); ?>">首页</a></li>
-            <li><a href="{:U('Zhuanlan/index')}">专栏</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">发起新提案 <b class="caret"></b></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="{:U('Shenbao/only_one')}">单个提案(职员)</a></li>
-                <li><a href="#">批量上传</a></li>
-              </ul>
-            </li>
+            <li><a href="{:U('Zhuanlan/index')}">周刊</a></li>
           </ul>
-          <div class="navbar-form navbar-left" role="search">
+          <div class="navbar-form navbar-right" role="search">
             <div class="form-group">
               <input type="text" id="menu_search_keyword" class="form-control" placeholder="请输入关键词">
             </div>
             <button  class="btn btn-default" id="menu_search">搜索</button>
           </div>
-          <ul class="nav navbar-nav navbar-right">
-			 <li><a href="{:U('Home/index')}"><i class="icon icon-user"></i>{$Think.session.Name}</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">设置/管理 <b class="caret"></b></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="{:U('Shenpi/wcx_list')}">待审批列表</a></li>
-                <li><a href="{:U('Admin/index')}">后台设置</a></li>
-                <li class="divider"></li>
-                <li><a href="{:U('Index/login_out')}">退出</a></li>
-              </ul>
-            </li>
-          </ul>
         </div><!-- /.navbar-collapse -->
       </nav>
     <div class="container">
