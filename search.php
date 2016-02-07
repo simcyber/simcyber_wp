@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<h1 class="page-title">搜索关键词:<?php echo esc_html( get_search_query());?></h1>
 	<div class="row">
 	  <div class="col-md-8">
         <section class="items items-hover">
@@ -44,5 +45,4 @@
       
       </div>
     </div>
-
 <?php get_footer(); ?>

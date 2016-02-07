@@ -46,12 +46,7 @@
     <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
     <?php wp_get_archives('type=monthly&format=link'); ?>
-</head>
-<body>
-    <!--[if lt IE 8]>
-        <div class="alert alert-danger">您正在使用 <strong>过时的</strong> 浏览器. 是时候 <a href="http://browsehappy.com/">更换一个更好的浏览器</a> 来提升用户体验.</div>
-    <![endif]-->
-      <style type="text/css">
+       <style type="text/css">
 		.navbar{
 			background-color:#057d9f;
 		}
@@ -64,7 +59,22 @@
 		.dropdown-menu li a{
 			color:#000;
 		}
+		.list-group{
+			list-style:none;
+		}
+		.list-group li{
+			list-style:none;
+		}
+		.list-group ul li{
+			list-style:none;
+		}
 	  </style>
+</head>
+<body>
+    <!--[if lt IE 8]>
+        <div class="alert alert-danger">您正在使用 <strong>过时的</strong> 浏览器. 是时候 <a href="http://browsehappy.com/">更换一个更好的浏览器</a> 来提升用户体验.</div>
+    <![endif]-->
+
 	  <nav class="navbar" role="navigation" >
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
