@@ -84,10 +84,12 @@
             <li><a href="{:U('Zhuanlan/index')}">周刊</a></li>
           </ul>
           <div class="navbar-form navbar-right" role="search">
+          	<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
             <div class="form-group">
-              <input type="text" id="menu_search_keyword" class="form-control" placeholder="请输入关键词">
+              <input type="text" id="s" name="s" class="form-control" placeholder="请输入关键词">
             </div>
             <button  class="btn btn-default" id="menu_search">搜索</button>
+            </form>
           </div>
         </div><!-- /.navbar-collapse -->
       </nav>
