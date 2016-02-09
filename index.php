@@ -9,7 +9,7 @@
           <div class="item">
             <div class="item-heading">
               <div class="pull-right"><?php edit_post_link('<i class="icon-pencil"></i> Edit', ' &#124; ', ''); ?></div>
-              <h2 class="text-ellipsis"><span class="label label-success">NEW</span>&nbsp;<a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h2>
+              <h2 class="text-ellipsis"><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h2>
             </div>
             <div class="item-content">
               <?php if($tmp_img){?>
