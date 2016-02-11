@@ -7,7 +7,7 @@
             <span class="input-group-addon fix-border fix-padding"></span>
             <select class="form-control">
               <option value="baidu">百度</option>
-              <option value="1">...</option>
+              <option value="1"></option>
             </select>
             <span class="input-group-addon fix-border fix-padding"></span>
             <input type="text" class="form-control" placeholder="社区/乡/镇" >
