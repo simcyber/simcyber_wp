@@ -2,7 +2,9 @@
           
 	<div class="row" style="margin-top:10px;">
 	  <div class="col-md-8">
-      <?php $search_sites=search_sites();?>
+      <?php 
+	  if( is_home() && !is_paged() ){
+	  $search_sites=search_sites();?>
       <form action="<?php bloginfo('url'); ?>/so.php" method="post" target="_blank">
       	<div class="input-group">
         	<label class="form-control" style="border:none; text-align:right;" >常用网站快捷搜索</label>
@@ -19,6 +21,7 @@
             </span>
           </div>
       </form>
+      <?php }?>
         <section class="items items-hover" style="margin-top:20px;">
 
   <?php if(have_posts()) : ?>
