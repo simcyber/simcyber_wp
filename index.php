@@ -1,7 +1,22 @@
 <?php get_header(); ?>
-	<div class="row">
+          
+	<div class="row" style="margin-top:10px;">
 	  <div class="col-md-8">
-        <section class="items items-hover">
+      
+      	<div class="input-group">
+            <span class="input-group-addon fix-border fix-padding"></span>
+            <select class="form-control">
+              <option value="baidu">百度</option>
+              <option value="1">...</option>
+            </select>
+            <span class="input-group-addon fix-border fix-padding"></span>
+            <input type="text" class="form-control" placeholder="社区/乡/镇" >
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">搜索</button>
+            </span>
+          </div>
+      
+        <section class="items items-hover" style="margin-top:20px;">
 
   <?php if(have_posts()) : ?>
   <?php while(have_posts()) : the_post(); ?>
