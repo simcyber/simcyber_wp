@@ -2,20 +2,23 @@
           
 	<div class="row" style="margin-top:10px;">
 	  <div class="col-md-8">
-      
+      <?php $search_sites=search_sites();?>
+      <form action="<?php bloginfo('url'); ?>/so.php" method="post" target="_blank">
       	<div class="input-group">
+        	<label class="form-control" style="border:none; text-align:right;" >常用网站快捷搜索</label>
             <span class="input-group-addon fix-border fix-padding"></span>
-            <select class="form-control">
-              <option value="baidu">百度</option>
-              <option value="1"></option>
+            <select class="form-control" name="site_list">
+            	<?php foreach($search_sites as $k=>$v){?>
+                <option value="<?php echo $k;?>"><?php echo $v;?></option>
+                <?php }?>
             </select>
             <span class="input-group-addon fix-border fix-padding"></span>
-            <input type="text" class="form-control" placeholder="社区/乡/镇" >
+            <input type="text" class="form-control" placeholder="常用网站搜索" name="keyword" >
             <span class="input-group-btn">
-              <button class="btn btn-default" type="button">搜索</button>
+              <button class="btn btn-default" type="submit">搜索</button>
             </span>
           </div>
-      
+      </form>
         <section class="items items-hover" style="margin-top:20px;">
 
   <?php if(have_posts()) : ?>

@@ -115,3 +115,13 @@ function par_pagenavi($range = 9){
 	next_posts_link(' 下一页 ');
     if($paged != $max_page){echo "<a href='" . get_pagenum_link($max_page) . "' class='extend' title='跳转到最后一页'> 最后一页 </a>";}}
 }
+
+function search_sites(){
+	$arr['baidu']="百度";
+	$arr['bing']="Bing";
+	$arr['zhihu']="知乎";
+	$arr['segmentfault']="SegmentFault";
+	
+	return $arr;
+	
+}
